@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from '../screen/HomeScreen';
 import FavoriteScreen from '../screen/FavoriteScreen';
-import CartScreen from '../screen/CartScreen';
+import CartScreen from '../screen/HistoryScreen';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -16,6 +16,9 @@ function TabNavigator() {
         screenOptions={{
           tabBarShowLabel: false,
           headerShown: false,
+          tabBarStyle: { backgroundColor: '#4169E1' },
+          tabBarInactiveTintColor: '#fff',
+          tabBarActiveTintColor: 'black',
         }}
       >
         <Tab.Screen
@@ -23,7 +26,7 @@ function TabNavigator() {
           component={HomeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name='home-outline' color={color} size={size} />
+              <Ionicons name='alarm-outline' color={color} size={size} />
             ),
           }}
         />
@@ -32,7 +35,7 @@ function TabNavigator() {
           component={FavoriteScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name='home-outline' color={color} size={size} />
+              <Ionicons name='subway-outline' color={color} size={size} />
             ),
           }}
         />
@@ -41,7 +44,11 @@ function TabNavigator() {
           component={CartScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name='home-outline' color={color} size={size} />
+              <Ionicons
+                name='document-text-outline'
+                color={color}
+                size={size}
+              />
             ),
           }}
         />
