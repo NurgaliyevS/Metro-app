@@ -17,8 +17,8 @@ function TabNavigator() {
           tabBarShowLabel: false,
           headerShown: false,
           tabBarStyle: { backgroundColor: '#4169E1' },
-          tabBarInactiveTintColor: '#fff',
-          tabBarActiveTintColor: 'black',
+          tabBarInactiveTintColor: 'black',
+          tabBarActiveTintColor: '#fff',
         }}
       >
         <Tab.Screen
