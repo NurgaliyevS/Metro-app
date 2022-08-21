@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import TabNavigator from './src/navigation/TabNavigator';
+import BottomNavigator from './src/navigation/BottomNavigator';
 
 export default function App() {
-  return <TabNavigator />;
+  return <BottomNavigator />;
 }
