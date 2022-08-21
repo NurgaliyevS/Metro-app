@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { View, Text } from 'react-native';
-import Station from '../components/Station';
+import Station from '../components/station/Station';
 
 function StationScreen({ navigation }) {
   return (

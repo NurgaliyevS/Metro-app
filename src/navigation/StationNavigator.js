@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StationScreen from '../screen/StationScreen';
-import StationTimetable from '../components/StationTimetable';
+import StationTimetable from '../components/station/StationTimetable';
 
 const Stack = createNativeStackNavigator();
 
