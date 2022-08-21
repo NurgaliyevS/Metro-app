@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Button } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 
 const StationView = styled.View`
@@ -14,73 +14,150 @@ const StationContainer = styled.View`
 
 const StationButton = styled.Button``;
 
-function Station() {
+function Station({ navigation }) {
   return (
     <ScrollView>
       <View>
         <StationView>
-          <StationContainer style={{ marginTop: 30 }}>
-            <StationButton title='«Райымбек батыра»'></StationButton>
+          <StationContainer>
+            <StationButton
+              title='«Райымбек батыра»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Райымбек батыра',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Жибек жолы»'></StationButton>
+            <StationButton
+              title='«Жибек жолы»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Жибек жолы',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Алмалы»'></StationButton>
+            <StationButton
+              title='«Алмалы»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Алмалы',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Абая»'></StationButton>
+            <StationButton
+              title='«Абая»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Абая',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Байконыр»'></StationButton>
+            <StationButton
+              title='«Байконыр»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Байконыр',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Театр имени Мухтара Ауэзова»'></StationButton>
+            <StationButton
+              title='«Театр имени Мухтара Ауэзова»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Театр имени Мухтара Ауэзова',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Алатау»'></StationButton>
+            <StationButton
+              title='«Алатау»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Алатау',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Сайран»'></StationButton>
+            <StationButton
+              title='«Сайран»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Сайран',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Москва»'></StationButton>
+            <StationButton
+              title='«Москва»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Москва',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Сарыарка»'></StationButton>
+            <StationButton
+              title='«Сарыарка»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Сарыарка',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
 
         <StationView>
           <StationContainer>
-            <StationButton title='«Б.Момышулы»'></StationButton>
+            <StationButton
+              title='«Б.Момышулы»'
+              onPress={() => {
+                navigation.navigate('StationTimetable', {
+                  name: 'Б.Момышулы',
+                });
+              }}
+            ></StationButton>
           </StationContainer>
         </StationView>
       </View>
