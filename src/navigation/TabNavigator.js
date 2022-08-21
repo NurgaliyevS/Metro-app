@@ -1,7 +1,7 @@
 import react from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from '../screen/HomeScreen';
+import StationScreen from '../screen/StationScreen';
 import FavoriteScreen from '../screen/FavoriteScreen';
 import CartScreen from '../screen/HistoryScreen';
 
@@ -22,8 +22,8 @@ function TabNavigator() {
         }}
       >
         <Tab.Screen
-          name='Home'
-          component={HomeScreen}
+          name='StationScreen'
+          component={StationScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name='alarm-outline' color={color} size={size} />
