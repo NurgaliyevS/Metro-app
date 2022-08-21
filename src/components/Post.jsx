@@ -3,13 +3,12 @@ import styled from 'styled-components/native';
 
 const PostView = styled.View`
   flex-direction: row;
-  padding: 10px;
+  padding: ${(props) => (props.section ? '10px 10px 0 10px' : '10px')};
 `;
 
 const PostContainer = styled.View`
-  border-bottom-width: 1px;
+  border-bottom-width: 0.5px;
   border-bottom-color: rbga(0, 0, 0, 0.1);
-  border-bottom-style: solid;
 `;
 
 const PostImage = styled.Image`
@@ -24,12 +23,12 @@ const PostTitle = styled.Text`
   padding: 15px;
   font-size: ${(props) => (props.section ? '14px' : '17px')}
   text-align:  ${(props) => (props.section ? 'center' : '')}
-  font-weight: 600;
   font-weight: bold;
 `;
 
 const PostDescription = styled.Text`
   flex: 1;
+  padding: ${(props) => (props.section ? '0 0 0 5px' : '0')};
 `;
 
 const PostHighlightDescript = styled.Text`
@@ -56,7 +55,7 @@ export default function Post() {
     // when working from pc
     <ScrollView>
       <View>
-        <PostTitle>
+        <PostTitle style={{ fontWeight: 'bold' }}>
           {truncateTitle('История строительства метрополитена')}
         </PostTitle>
         <PostContainer>
@@ -205,7 +204,7 @@ export default function Post() {
           <PostView>
             <PostImage source={require('../../assets/1993.jpg')} />
             <PostDescription>
-              <PostHighlightDescript>1993 год{'\n'}</PostHighlightDescript>1
+              <PostHighlightDescript>1993 год{'\n'}`</PostHighlightDescript>1
               января - Из института «Алмаатагипротранс» отдел метро выделился в
               самостоятельную фирму «Метропроект» во главе П.В. Пашковским,
               которая вошла в состав «ПСО Алмаатаметрострой».
@@ -273,39 +272,25 @@ export default function Post() {
           >
             2001 год
           </Text>
-          <PostView>
+          <PostView section>
             <PostDescription>
               22 ноября - Произведена сбойка левого перегонного тоннеля с
               западной подходной ст. «Тулпар». Тоннель протяженностью 1330
-              метров от ст. «Алатау» до ст. «Тулпар» пробивался 11 лет.{'\n'}
-              {'\n'}
-              <PostHighlightDescript>
-                2004 год{'\n'}
-                {'\n'}
-              </PostHighlightDescript>
-              4 августа - Произведена сбойка левого перегонного тоннеля между
-              двумя станциями «Жибек Жолы» и «Алмалы».{'\n'}
-              {'\n'}4 октября – Произведена сбойка правого перегонного тоннеля
-              между двумя станциями «Жибек жолы» и «Алмалы»{'\n'}
-              {'\n'}
-              21 декабря - Сбойка правого перегонного тоннеля с восточной
-              подходной ст. «Тулпар». Тоннель протяженностью 1323 метров от ст.
-              «Алатау» до ст. «Тулпар» пробивался 13 лет.
+              метров от ст. «Алатау» до ст. «Тулпар» пробивался 11 лет.{' '}
             </PostDescription>
             <PostImage source={require('../../assets/2001.jpg')} />
           </PostView>
 
-          {/* <Text
+          <Text
             style={{
               fontWeight: 'bold',
-              paddingTop: 10,
               paddingLeft: 10,
               paddingBottom: 0,
             }}
           >
             2004 год
-          </Text> */}
-          {/* <PostView>
+          </Text>
+          <PostView>
             <PostDescription>
               4 августа - Произведена сбойка левого перегонного тоннеля между
               двумя станциями «Жибек Жолы» и «Алмалы». {'\n'}
@@ -313,9 +298,230 @@ export default function Post() {
               между двумя станциями «Жибек жолы» и «Алмалы»{'\n'}
               {'\n'}21 декабря - Сбойка правого перегонного тоннеля с восточной
               подходной ст. «Тулпар». Тоннель протяженностью 1323 метров от ст.
-              «Алатау» до ст. «Тулпар» пробивался 13 лет.
+              «Алатау» до ст. «Тулпар» пробивался 13 лет.{'\n'}
             </PostDescription>
-          </PostView> */}
+          </PostView>
+
+          <Text
+            style={{
+              fontWeight: 'bold',
+              paddingLeft: 10,
+              paddingTop: 10,
+              paddingBottom: 0,
+            }}
+          >
+            2005 год
+          </Text>
+          <PostView>
+            <PostDescription>
+              19 апреля - Совместно со специалистами австрийской компании «Бетон
+              унд Мониербау» приступили к сооружению левого станционного тоннеля
+              ст. «Жибек Жолы».{'\n'}
+              {'\n'}7 ноября - Посещение Президентом Республики Казахстан Н.А.
+              Назарбаевым объекта строящегося метрополитена станции «Алмалы».
+            </PostDescription>
+          </PostView>
+        </PostContainer>
+
+        <PostContainer>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              paddingTop: 10,
+              paddingLeft: 15,
+              paddingBottom: 0,
+            }}
+          >
+            2006 год
+          </Text>
+          <PostView>
+            <PostDescription section>
+              1 января - Завершена проходка левого перегонного тоннеля ст.
+              «Тулпар» – ст. «Байконур». Начато сооружение поперечной камеры ст.
+              «Байконур» через проходческий комплекс КПЩ-12. Начато сооружение
+              защитного экрана под улицей Жарокова. Для устройства экрана
+              использован микротоннелепроходческий комплекс (МТПК) AVN -600
+              фирмы «Херренкнехт АГ». Пуск щита «Херренкнехт» на ст. «Алмалы».
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              9 июня - Сбойка правого перегонного тоннеля с поперечной камерой
+              ст. «Байконур».
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              7 июля - Сбойка левого перегонного тоннеля с конвейерной камерой
+              на ст. «Алмалы» (первая сбойка проходческого комплекса
+              «Херренкнехт»).
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Начато сооружение правого станционного тоннеля ст. «Алмалы»
+              методом НАТМ, а также наклонного хода ст. «Тулпар».
+            </PostDescription>
+          </PostView>
+        </PostContainer>
+
+        <PostContainer>
+          <PostView>
+            <PostImage source={require('../../assets/2007.jpg')} />
+            <PostDescription>
+              <PostHighlightDescript>2007 год{'\n'}</PostHighlightDescript>
+              Начато сооружение левого станционного тоннеля ст. «Тулпар», левого
+              станционного тоннеля ст. «Алмалы», правого станционного тоннеля
+              ст. «Жибек жолы», левого станционного тоннеля ст. Байконур»,
+              среднего станционного тоннеля ст. «Алмалы» методом НАТМ, а также
+              сооружение наклонного хода и подходного коридора ст. «Байконур».
+            </PostDescription>
+          </PostView>
+          <PostView>
+            <PostDescription section>
+              25 мая – Сбойка с поперечной камерой станции «Абай» правого
+              перегонного тоннеля между станциями «Алмалы» и «Абай».
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              10 июня – Сбойка с поперечной камерой станции «Абай» левого
+              перегонного тоннеля между станциями «Алмалы» и «Абай» (
+              проходческий комплекс «Херренкнехт»).
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Завершено сооружение правого станционного тоннеля ст. «Алмалы» в
+              основной обделке
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Начато сооружение защитного экрана из труб под проспектом
+              Гагарина. Для устройства экрана использован
+              микротоннелепроходческий комплекс (МТПК) AVN-600 фирмы
+              «Херренкнехт АГ».
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              3 августа - Президент Республики Казахстан Нурсултан Назарбаев
+              посетил объекты метрополитена.
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Завершено сооружение левого станционного тоннеля ст. «Алмалы» и
+              левого станционного тоннеля ст. «Тулпар» в основной обделке.
+            </PostDescription>
+          </PostView>
+        </PostContainer>
+
+        <PostContainer>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              paddingLeft: 15,
+              paddingTop: 10,
+              paddingBottom: 0,
+            }}
+          >
+            2008 год
+          </Text>
+          <PostView>
+            <PostDescription section>
+              16 января - Завершено сооружение среднего станционного тоннеля ст.
+              «Алмалы» в основной обделке{'\n'}
+              {'\n'}2 марта - Начато сооружение правого станционного тоннеля ст.
+              «Абай» методом НАТМ.
+            </PostDescription>
+            <PostImage source={require('../../assets/2008.jpg')} />
+          </PostView>
+          <PostView>
+            <PostDescription section>
+              10 марта - Начато сооружение правого станционного тоннеля ст.
+              «Тулпар» методом НАТМ.
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              15 апреля - Сбойка правого перегонного тоннеля ст. «Абай» – ст.
+              «Байконур» с демонтажной камерой. Данной сбойкой завершена
+              проходка правого перегонного тоннеля от ст. «Райымбек» до ст.
+              «Алатау».
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              25 июля - Произведена последняя сбойка между станциями «Абай» и
+              «Байконур». Завершение строительства перегонных тоннелей первой
+              очереди.
+            </PostDescription>
+          </PostView>
+        </PostContainer>
+
+        <PostContainer>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              paddingLeft: 15,
+              paddingTop: 10,
+              paddingBottom: 0,
+            }}
+          >
+            2011 год
+          </Text>
+          <PostView>
+            <PostDescription section>
+              1-декабря первая очередь метрополитена общей протяженностью 8,6 км
+              была сдана в эксплуатацию . В нее входят семь станций: «Райымбек
+              батыр», «Жибек жолы», «Алмалы», «Абай», «Байконыр» и «Драмтеатр
+              им. Ауэзова» и «Алатау».
+            </PostDescription>
+          </PostView>
+
+          <Text
+            style={{
+              fontWeight: 'bold',
+              paddingLeft: 15,
+              paddingTop: 10,
+              paddingBottom: 0,
+            }}
+          >
+            2015 год
+          </Text>
+          <PostView>
+            <PostDescription section>
+              18 апреля – введен в эксплуатацию первый пусковой комплекс второй
+              очереди первой линии метрополитена: станции «Сайран» и «Москва».
+              Протяженность тоннели метро увеличилась на 2,74 км.
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Станция «Сайран» расположена по проспекту Абая, между ул.
+              Брусиловского и ул. Тлендиева.
+            </PostDescription>
+          </PostView>
+
+          <PostView>
+            <PostDescription section>
+              Станция «Москва» расположена по проспекту Абая, между ул. Утеген
+              батыра и пр. Алтынсарина.
+            </PostDescription>
+          </PostView>
         </PostContainer>
       </View>
     </ScrollView>
