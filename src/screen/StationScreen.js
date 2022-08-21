@@ -3,10 +3,10 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Station from '../components/Station';
 
-function StationScreen() {
+function StationScreen({ navigation }) {
   return (
     <View>
-      <Station />
+      <Station navigation={navigation} />
     </View>
   );
 }
