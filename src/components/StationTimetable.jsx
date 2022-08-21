@@ -1,7 +1,9 @@
 import React from 'react';
 
-function StationTimetable() {
-  return <div></div>;
+import { Text } from 'react-native';
+
+function StationTimetable({ navigation, route }) {
+  return <Text>This is {route.params.name}'s profile</Text>;
 }
 
 export default StationTimetable;
