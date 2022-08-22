@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 
 import { StationTimeTable } from '../../constants/StationTimeTable';
@@ -75,11 +75,6 @@ function setTitle(title, navigation) {
       navigation.setOptions({ title: 'Б.Момышулы' });
       break;
   }
-}
-
-function mapTimeTable(timeTable) {
-  const getOnlyValues = Object.values(timeTable);
-  return getOnlyValues?.map((element) => element + '\n' + '\n');
 }
 
 function stationContainerAndTitle(
@@ -170,25 +165,6 @@ function showTitleStations(
   );
 }
 
-function timeTable(stationName) {
-  return (
-    <Container>
-      <StationTimeTableContainer>
-        <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {stationName === 'раимбек' &&
-            StationTimeTable.raimbekToZhibek.workingDays[0]}
-        </StationTimeTableText>
-      </StationTimeTableContainer>
-
-      <StationTimeTableContainer>
-        <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {stationName === 'жибек жолы' && StationTimeTable.raimbekToZhibek[0]}
-        </StationTimeTableText>
-      </StationTimeTableContainer>
-    </Container>
-  );
-}
-
 function StationTimetable({ navigation, route }) {
   const [stationNameAfterNavigationDown, setStationNameAfterNavigationDown] =
     useState('');
@@ -239,6 +215,35 @@ function StationTimetable({ navigation, route }) {
     }
     setIsWeekendOrWorkDay('Рабочие дни');
     return;
+  }
+
+  function timeTable(stationName) {
+    console.log(stationName, 'stationName');
+    console.log(isWeekendOrWorkDay, 'isWeekendOrWorkDay');
+
+    return (
+      <ScrollView>
+        <Container>
+          <StationTimeTableContainer>
+            <StationTimeTableText
+              style={{ paddingTop: 20, paddingLeft: '35%' }}
+            >
+              {stationName === 'Жибек жолы' &&
+                StationTimeTable.zhibekToRaimbek.workingDays[0]}
+            </StationTimeTableText>
+          </StationTimeTableContainer>
+
+          <StationTimeTableContainer>
+            <StationTimeTableText
+              style={{ paddingTop: 20, paddingLeft: '35%' }}
+            >
+              {stationName === 'Жибек жолы' &&
+                StationTimeTable.zhibekToAlmaly.workingDays[0]}
+            </StationTimeTableText>
+          </StationTimeTableContainer>
+        </Container>
+      </ScrollView>
+    );
   }
 
   return (
