@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import styled from 'styled-components/native';
 
 import { StationTimeTable } from '../../constants/StationTimeTable';
@@ -142,7 +142,7 @@ function showTitleStations(
     stationNameAfterNavigationDown === ''
   )
     return (
-      <View style={{ flex: 0.2, backgroundColor: '#3d86cb' }}>
+      <View style={{ flex: 0.2, backgroundColor: '#3d86cb', marginTop: 30 }}>
         <StationContainer>
           <StationTitle>
             {'\n'}
@@ -175,24 +175,18 @@ function timeTable(stationName) {
     <Container>
       <StationTimeTableContainer>
         <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {stationName === 'жибек жолы' &&
-            mapTimeTable(StationTimeTable.raimbekToZhibek.workingDays)}
+          {stationName === 'раимбек' &&
+            StationTimeTable.raimbekToZhibek.workingDays[0]}
         </StationTimeTableText>
       </StationTimeTableContainer>
 
       <StationTimeTableContainer>
         <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {stationName === 'жибек жолы' &&
-            mapTimeTable(StationTimeTable.raimbekToZhibek.workingDays)}
+          {stationName === 'жибек жолы' && StationTimeTable.raimbekToZhibek[0]}
         </StationTimeTableText>
       </StationTimeTableContainer>
     </Container>
   );
-}
-
-function workingDayOrWeekend(date) {
-  if (date.getDay() === 6 || date.getDay() === 0) return 'Выходные дни';
-  return 'Рабочие дни';
 }
 
 function StationTimetable({ navigation, route }) {
@@ -201,6 +195,9 @@ function StationTimetable({ navigation, route }) {
 
   const [stationNameAfterNavigationUp, setStationNameAfterNavigationUp] =
     useState('');
+
+  const [changeWorkDayOrWeekend, setChangeWorkDayOrWeekend] = useState(false);
+  const [isWeekendOrWorkDay, setIsWeekendOrWorkDay] = useState('');
 
   useEffect(() => {
     setTitle(route.params.name, navigation);
@@ -211,6 +208,13 @@ function StationTimetable({ navigation, route }) {
       setStationNameAfterNavigationUp
     );
   }, [route]);
+
+  function workingDayOrWeekend(date) {
+    if (date.getDay() === 6 || date.getDay() === 0) {
+      return 'Выходные дни';
+    }
+    return 'Рабочие дни';
+  }
 
   useEffect(() => {
     if (
@@ -224,21 +228,43 @@ function StationTimetable({ navigation, route }) {
     );
   }, [stationNameAfterNavigationUp, stationNameAfterNavigationDown]);
 
+  useEffect(() => {
+    changeTimeTableByPress();
+  }, [changeWorkDayOrWeekend]);
+
+  function changeTimeTableByPress() {
+    if (isWeekendOrWorkDay.toLocaleLowerCase() === 'рабочие дни') {
+      setIsWeekendOrWorkDay('Выходные дни');
+      return;
+    }
+    setIsWeekendOrWorkDay('Рабочие дни');
+    return;
+  }
+
   return (
     <>
       <TimeTableTitle style={{ textAlign: 'center', color: '#3d86cb' }}>
         Расписание
       </TimeTableTitle>
-      <TimeTableTitle
-        style={{ textAlign: 'center', paddingTop: 5, color: '#3d86cb' }}
-        weekendsOrNot
+      <Pressable
+        onPress={() => {
+          setChangeWorkDayOrWeekend((workDay) => !workDay);
+        }}
       >
-        {workingDayOrWeekend(new Date())}
-      </TimeTableTitle>
+        <TimeTableTitle
+          style={{ textAlign: 'center', paddingTop: 10, color: '#3d86cb' }}
+          weekendsOrNot
+        >
+          {isWeekendOrWorkDay === ''
+            ? workingDayOrWeekend(new Date())
+            : isWeekendOrWorkDay}
+        </TimeTableTitle>
+      </Pressable>
       {showTitleStations(
         stationNameAfterNavigationUp,
         stationNameAfterNavigationDown
       )}
+      {timeTable(route.params.name)}
     </>
   );
 }
