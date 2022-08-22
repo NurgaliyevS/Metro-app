@@ -138,10 +138,19 @@ function showTitleStations(
   stationNameAfterNavigationDown
 ) {
   if (
-    stationNameAfterNavigationUp === '' &&
+    stationNameAfterNavigationUp === '' ||
     stationNameAfterNavigationDown === ''
   )
-    return;
+    return (
+      <View style={{ flex: 0.2, backgroundColor: '#4169e1' }}>
+        <StationContainer>
+          <StationTitle>
+            {'\n'}
+            {stationNameAfterNavigationUp || stationNameAfterNavigationDown}
+          </StationTitle>
+        </StationContainer>
+      </View>
+    );
 
   return (
     <Container>
