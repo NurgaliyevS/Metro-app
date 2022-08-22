@@ -1,7 +1,8 @@
 export const StationTimeTable = {
   raimbekToZhibek: {
     workingDays: {
-      0: `06:22:00
+      0: `
+      06:22:00
       06:30:50
       06:39:40
       06:48:30
@@ -99,7 +100,8 @@ export const StationTimeTable = {
       24:02:06`,
     },
     weekends: {
-      0: `06:21:15
+      0: `
+      06:21:15
       06:36:15
       06:52:15
       07:08:15
@@ -183,7 +185,8 @@ export const StationTimeTable = {
 
   zhibekToRaimbek: {
     workingDays: {
-      0: `06:32:55
+      0: `
+      06:32:55
       06:47:10
       06:59:10
       07:08:20
@@ -284,7 +287,8 @@ export const StationTimeTable = {
       `,
     },
     weekends: {
-      0: `06:30:25
+      0: `
+      06:30:25
       06:45:25
       07:01:25
       07:16:25
@@ -370,7 +374,8 @@ export const StationTimeTable = {
 
   zhibekToAlmaly: {
     workingDays: {
-      0: `06:24:20
+      0: `
+    06:24:20
     06:33:10
     06:42:00
     06:50:50
@@ -469,7 +474,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:23:35
+      0: `
+      06:23:35
     06:38:35
     06:54:35
     07:10:35
@@ -554,7 +560,8 @@ export const StationTimeTable = {
 
   almalyToZhibek: {
     workingDays: {
-      0: `06:30:45
+      0: `
+      06:30:45
     06:45:00
     06:57:00
     07:06:10
@@ -655,7 +662,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:28:15
+      0: `
+      06:28:15
     06:43:15
     06:59:15
     07:14:15
@@ -741,7 +749,8 @@ export const StationTimeTable = {
 
   almalyToAbai: {
     workingDays: {
-      0: `06:26:30
+      0: `
+    06:26:30
     06:35:20
     06:44:10
     06:53:00
@@ -840,7 +849,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:25:45
+      0: `
+    06:25:45
     06:40:45
     06:56:45
     07:12:45
@@ -925,7 +935,8 @@ export const StationTimeTable = {
 
   abaiToAlmaly: {
     workingDays: {
-      0: `06:28:15
+      0: `
+    06:28:15
     06:42:30
     06:54:30
     07:03:40
@@ -1026,7 +1037,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:25:45
+      0: `
+    06:25:45
     06:40:45
     06:56:45
     07:11:45
@@ -1112,7 +1124,8 @@ export const StationTimeTable = {
 
   abaiToBaikonur: {
     workingDays: {
-      0: `06:29:00
+      0: `
+    06:29:00
     06:37:50
     06:46:40
     06:55:30
@@ -1211,7 +1224,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:28:15
+      0: `
+    06:28:15
     06:43:15
     06:59:15
     07:15:15
@@ -1296,7 +1310,8 @@ export const StationTimeTable = {
 
   baikonurToAbai: {
     workingDays: {
-      0: `06:25:05
+      0: `
+    06:25:05
     06:39:20
     06:51:20
     07:00:30
@@ -1397,7 +1412,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:22:35
+      0: `
+    06:22:35
     06:37:35
     06:53:35
     07:08:35
@@ -1483,7 +1499,8 @@ export const StationTimeTable = {
 
   baikonurToTeatrAuezov: {
     workingDays: {
-      0: `06:32:10
+      0: `
+    06:32:10
     06:41:00
     06:49:50
     06:58:40
@@ -1582,7 +1599,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:31:25
+      0: `
+    06:31:25
     06:46:25
     07:02:25
     07:18:25
@@ -1667,7 +1685,8 @@ export const StationTimeTable = {
 
   teatrAuezovToBaikonur: {
     workingDays: {
-      0: `06:22:45
+      0: `
+    06:22:45
     06:37:00
     06:49:00
     06:58:10
@@ -1768,7 +1787,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:35:15
+      0: `
+    06:35:15
     06:51:15
     07:06:15
     07:21:15
@@ -1853,7 +1873,8 @@ export const StationTimeTable = {
 
   teatrAuezovToAlatau: {
     workingDays: {
-      0: `06:23:10
+      0: `
+    06:23:10
     06:34:30
     06:43:20
     06:52:10
@@ -1953,7 +1974,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:33:45
+      0: `
+    06:33:45
     06:48:45
     07:04:45
     07:20:45
@@ -2038,7 +2060,8 @@ export const StationTimeTable = {
 
   alatauToTeatrAuezov: {
     workingDays: {
-      0: `06:34:10
+      0: `
+    06:34:10
     06:46:10
     06:55:20
     07:04:10
@@ -2138,7 +2161,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:32:25
+      0: `
+    06:32:25
     06:48:25
     07:03:25
     07:18:25
@@ -2223,7 +2247,8 @@ export const StationTimeTable = {
 
   alatauToSairan: {
     workingDays: {
-      0: `06:26:00
+      0: `
+    06:26:00
     06:37:20
     06:46:10
     06:55:00
@@ -2323,7 +2348,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:21:35
+      0: `
+    06:21:35
     06:36:35
     06:51:35
     07:07:35
@@ -2409,7 +2435,8 @@ export const StationTimeTable = {
 
   sairanToAlatau: {
     workingDays: {
-      0: `06:31:30
+      0: `
+    06:31:30
     06:43:30
     06:52:40
     07:01:30
@@ -2509,7 +2536,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:29:45
+      0: `
+    06:29:45
     06:45:45
     07:00:45
     07:15:45
@@ -2594,7 +2622,8 @@ export const StationTimeTable = {
 
   sairanToMoscow: {
     workingDays: {
-      0: `06:28:40
+      0: `
+    06:28:40
     06:40:00
     06:48:50
     06:57:40
@@ -2694,7 +2723,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:24:15
+      0: `
+    06:24:15
     06:39:15
     06:54:15
     07:10:15
@@ -2780,7 +2810,8 @@ export const StationTimeTable = {
 
   moscowToSairan: {
     workingDays: {
-      0: `06:28:50
+      0: `
+    06:28:50
     06:40:50
     06:50:00
     06:58:50
@@ -2880,7 +2911,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:27:05
+      0: `
+    06:27:05
     06:43:05
     06:58:05
     07:13:05
@@ -2965,7 +2997,8 @@ export const StationTimeTable = {
 
   moscowToSaryarka: {
     workingDays: {
-      0: `06:22:30
+      0: `
+    06:22:30
     06:31:20
     06:42:40
     06:51:30
@@ -3066,7 +3099,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:26:55
+      0: `
+    06:26:55
     06:41:55
     06:56:55
     07:12:55
@@ -3152,7 +3186,8 @@ export const StationTimeTable = {
 
   saryarkaToMoscow: {
     workingDays: {
-      0: `06:26:20
+      0: `
+    06:26:20
     06:38:20
     06:47:30
     06:56:20
@@ -3252,7 +3287,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:24:35
+      0: `
+    06:24:35
     06:40:35
     06:55:35
     07:10:35
@@ -3337,7 +3373,8 @@ export const StationTimeTable = {
 
   saryarkaToMomushuly: {
     workingDays: {
-      0: `06:24:30
+      0: `
+    06:24:30
     06:33:50
     06:45:10
     06:54:00
@@ -3438,7 +3475,8 @@ export const StationTimeTable = {
     `,
     },
     weekends: {
-      0: `06:29:25
+      0: `
+    06:29:25
     06:44:25
     06:59:25
     07:15:25
@@ -3524,7 +3562,8 @@ export const StationTimeTable = {
 
   momushulyToSaryarka: {
     workingDays: {
-      0: `06:23:00
+      0: `
+    06:23:00
     06:35:00
     06:44:10
     06:53:00
@@ -3623,7 +3662,8 @@ export const StationTimeTable = {
     24:02:00`,
     },
     weekends: {
-      0: `06:21:15
+      0: `
+    06:21:15
     06:37:15
     06:52:15
     07:07:15
