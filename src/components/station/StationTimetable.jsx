@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { View, Text } from 'react-native';
 import styled from 'styled-components/native';
@@ -18,7 +18,7 @@ const TimeTableTitle = styled.Text`
 const StationContainer = styled.View`
   flex: 1;
   margin-top: 30px;
-  height: 50px;
+  height: 70px;
   background-color: #4169e1;
 `;
 
@@ -43,7 +43,36 @@ function setTitle(title, navigation) {
   switch (title.toLowerCase()) {
     case 'райымбек батыра':
       navigation.setOptions({ title: 'Райымбек батыра' });
-      stationContainerAndTitle();
+      break;
+    case 'жибек жолы':
+      navigation.setOptions({ title: 'Жибек жолы' });
+      break;
+    case 'алмалы':
+      navigation.setOptions({ title: 'Алмалы' });
+      break;
+    case 'абая':
+      navigation.setOptions({ title: 'Абая' });
+      break;
+    case 'байконыр':
+      navigation.setOptions({ title: 'Байконыр' });
+      break;
+    case 'театр имени мухтара ауэзова':
+      navigation.setOptions({ title: 'Театр имени Мухтара Ауэзова' });
+      break;
+    case 'алатау':
+      navigation.setOptions({ title: 'Алатау' });
+      break;
+    case 'сайран':
+      navigation.setOptions({ title: 'Сайран' });
+      break;
+    case 'москва':
+      navigation.setOptions({ title: 'Москва' });
+      break;
+    case 'сарыарка':
+      navigation.setOptions({ title: 'Сарыарка' });
+      break;
+    case 'б.момышулы':
+      navigation.setOptions({ title: 'Б.Момышулы' });
       break;
   }
 }
@@ -53,32 +82,99 @@ function mapTimeTable(timeTable) {
   return getOnlyValues?.map((element) => element + '\n' + '\n');
 }
 
-function stationContainerAndTitle() {
+function stationContainerAndTitle(
+  stationName,
+  setStationNameAfterNavigationDown,
+  setStationNameAfterNavigationUp
+) {
+  switch (stationName.toLowerCase()) {
+    case 'райымбек батыра':
+      setStationNameAfterNavigationDown('Жибек жолы');
+      break;
+    case 'жибек жолы':
+      setStationNameAfterNavigationDown('Алмалы');
+      setStationNameAfterNavigationUp('Райымбек батыра');
+      break;
+    case 'алмалы':
+      setStationNameAfterNavigationDown('Абая');
+      setStationNameAfterNavigationUp('Жибек жолы');
+      break;
+    case 'абая':
+      setStationNameAfterNavigationDown('Байконыр');
+      setStationNameAfterNavigationUp('Алмалы');
+      break;
+    case 'байконыр':
+      setStationNameAfterNavigationDown('Театр имени Мухтара Ауэзова');
+      setStationNameAfterNavigationUp('Абая');
+      break;
+    case 'театр имени мухтара ауэзова':
+      setStationNameAfterNavigationDown('Алатау');
+      setStationNameAfterNavigationUp('Байконыр');
+      break;
+    case 'алатау':
+      setStationNameAfterNavigationDown('Сайран');
+      setStationNameAfterNavigationUp('Театр имени Мухтара Ауэзова');
+      break;
+    case 'сайран':
+      setStationNameAfterNavigationDown('Москва');
+      setStationNameAfterNavigationUp('Алатау');
+      break;
+    case 'москва':
+      setStationNameAfterNavigationDown('Сарыарка');
+      setStationNameAfterNavigationUp('Сайран');
+      break;
+    case 'сарыарка':
+      setStationNameAfterNavigationDown('Б.Момышулы');
+      setStationNameAfterNavigationUp('Москва');
+      break;
+    case 'б.момышулы':
+      setStationNameAfterNavigationUp('Сарыарка');
+      break;
+  }
+}
+
+function showTitleStations(
+  stationNameAfterNavigationUp,
+  stationNameAfterNavigationDown
+) {
+  if (
+    stationNameAfterNavigationUp === '' &&
+    stationNameAfterNavigationDown === ''
+  )
+    return;
+
   return (
-    <>
+    <Container>
       <StationContainer>
-        <StationTitle>{'\n'}Райымбек батыра</StationTitle>
+        <StationTitle>
+          {'\n'}
+          {stationNameAfterNavigationUp}
+        </StationTitle>
       </StationContainer>
       <StationContainer>
-        <StationTitle>{'\n'}Алмалы</StationTitle>
+        <StationTitle>
+          {'\n'}
+          {stationNameAfterNavigationDown}
+        </StationTitle>
       </StationContainer>
-      {zhibelZholyTimeTable()}
-    </>
+    </Container>
   );
 }
 
-function zhibelZholyTimeTable() {
+function timeTable(stationName) {
   return (
     <Container>
       <StationTimeTableContainer>
         <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {mapTimeTable(StationTimeTable.Raimbek.workingDays)}
+          {stationName === 'жибек жолы' &&
+            mapTimeTable(StationTimeTable.raimbekToZhibek.workingDays)}
         </StationTimeTableText>
       </StationTimeTableContainer>
 
       <StationTimeTableContainer>
         <StationTimeTableText style={{ paddingTop: 20, paddingLeft: '35%' }}>
-          {mapTimeTable(StationTimeTable.Raimbek.workingDays)}
+          {stationName === 'жибек жолы' &&
+            mapTimeTable(StationTimeTable.raimbekToZhibek.workingDays)}
         </StationTimeTableText>
       </StationTimeTableContainer>
     </Container>
@@ -91,9 +187,33 @@ function workingDayOrWeekend(date) {
 }
 
 function StationTimetable({ navigation, route }) {
+  const [stationNameAfterNavigationDown, setStationNameAfterNavigationDown] =
+    useState('');
+
+  const [stationNameAfterNavigationUp, setStationNameAfterNavigationUp] =
+    useState('');
+
   useEffect(() => {
     setTitle(route.params.name, navigation);
+    timeTable(route.params.name);
+    stationContainerAndTitle(
+      route.params.name,
+      setStationNameAfterNavigationDown,
+      setStationNameAfterNavigationUp
+    );
   }, [route]);
+
+  useEffect(() => {
+    if (
+      setStationNameAfterNavigationUp === '' &&
+      stationNameAfterNavigationDown === ''
+    )
+      return;
+    showTitleStations(
+      stationNameAfterNavigationUp,
+      stationNameAfterNavigationDown
+    );
+  }, [stationNameAfterNavigationUp, stationNameAfterNavigationDown]);
 
   return (
     <>
@@ -106,8 +226,10 @@ function StationTimetable({ navigation, route }) {
       >
         {workingDayOrWeekend(new Date())}
       </TimeTableTitle>
-      <Container>{stationContainerAndTitle()}</Container>
-      {zhibelZholyTimeTable()}
+      {showTitleStations(
+        stationNameAfterNavigationUp,
+        stationNameAfterNavigationDown
+      )}
     </>
   );
 }
