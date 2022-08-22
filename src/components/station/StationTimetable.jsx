@@ -19,7 +19,7 @@ const StationContainer = styled.View`
   flex: 1;
   margin-top: 30px;
   height: 70px;
-  background-color: #4169e1;
+  background-color: #3d86cb;
 `;
 
 const StationTitle = styled.Text`
@@ -142,7 +142,7 @@ function showTitleStations(
     stationNameAfterNavigationDown === ''
   )
     return (
-      <View style={{ flex: 0.2, backgroundColor: '#4169e1' }}>
+      <View style={{ flex: 0.2, backgroundColor: '#3d86cb' }}>
         <StationContainer>
           <StationTitle>
             {'\n'}
@@ -226,11 +226,11 @@ function StationTimetable({ navigation, route }) {
 
   return (
     <>
-      <TimeTableTitle style={{ textAlign: 'center' }}>
+      <TimeTableTitle style={{ textAlign: 'center', color: '#3d86cb' }}>
         Расписание
       </TimeTableTitle>
       <TimeTableTitle
-        style={{ textAlign: 'center', paddingTop: 5 }}
+        style={{ textAlign: 'center', paddingTop: 5, color: '#3d86cb' }}
         weekendsOrNot
       >
         {workingDayOrWeekend(new Date())}
