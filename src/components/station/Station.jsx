@@ -1,21 +1,19 @@
 import React from 'react';
-import { View, ScrollView, Pressable, Text } from 'react-native';
+import { View, ScrollView, Pressable } from 'react-native';
 import styled from 'styled-components/native';
 
 const StationView = styled.View`
   padding: 15px;
   flex: 1;
-`;
-
-const StationContainer = styled.View`
-  flex: 1;
+  border-bottom-width: 0.4px;
+  border-bottom-color: gray
+  border-bottom: solid;
 `;
 
 const StationTitle = styled.Text`
   text-align: center;
+  color: #3d86cb;
 `;
-
-const StationButton = styled.Button``;
 
 function Station({ navigation }) {
   return (
@@ -29,10 +27,7 @@ function Station({ navigation }) {
               });
             }}
           >
-            <StationTitle>
-              «Райымбек батыра»{'\n'}
-              {'\n'}
-            </StationTitle>
+            <StationTitle>«Райымбек батыра»</StationTitle>
           </Pressable>
         </StationView>
 
