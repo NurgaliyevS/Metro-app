@@ -475,7 +475,7 @@ export const StationTimeTable = {
     },
     weekends: {
       0: `
-      06:23:35
+    06:23:35
     06:38:35
     06:54:35
     07:10:35
@@ -561,7 +561,7 @@ export const StationTimeTable = {
   almalyToZhibek: {
     workingDays: {
       0: `
-      06:30:45
+    06:30:45
     06:45:00
     06:57:00
     07:06:10
@@ -663,7 +663,7 @@ export const StationTimeTable = {
     },
     weekends: {
       0: `
-      06:28:15
+    06:28:15
     06:43:15
     06:59:15
     07:14:15
