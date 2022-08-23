@@ -1,7 +1,7 @@
 import react from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import FavoriteScreen from '../screen/FavoriteScreen';
+import StationDescriptionScreen from '../screen/StationDescriptionScreen';
 import CartScreen from '../screen/HistoryScreen';
 import StationNavigator from './StationNavigator';
 
@@ -31,8 +31,8 @@ function BottomNavigator() {
           }}
         />
         <Bottom.Screen
-          name='Favorite'
-          component={FavoriteScreen}
+          name='StationDescription'
+          component={StationDescriptionScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name='subway-outline' color={color} size={size} />
