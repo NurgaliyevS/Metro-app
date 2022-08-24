@@ -1,20 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Pressable } from 'react-native';
-import styled from 'styled-components/native';
 import StationList from '../commonFIelds/StationList';
-
-const StationView = styled.View`
-  padding: 15px;
-  flex: 1;
-  border-bottom-width: 0.4px;
-  border-bottom-color: gray
-  border-bottom: solid;
-`;
-
-const StationTitle = styled.Text`
-  text-align: center;
-  color: #3d86cb;
-`;
 
 function Station({ navigation }) {
   function navigateToStationTimeTable(stationName) {
