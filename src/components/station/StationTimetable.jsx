@@ -40,7 +40,7 @@ const TimeTableText = styled.Text`
   font-size: 17px;
 `;
 
-function setTitle(title, navigation) {
+export function setTitle(title, navigation) {
   switch (title.toLowerCase()) {
     case 'райымбек батыра':
       navigation.setOptions({ title: 'Райымбек батыра' });
