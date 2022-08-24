@@ -19,7 +19,7 @@ const StationContainer = styled.View`
   flex: 1;
   margin-top: 15px;
   height: 70px;
-  background-color: #3d86cb;
+  background-color: ${(props) => (props.timeTable ? 'white' : '#3d86cb')};
 `;
 
 const StationTitle = styled.Text`
@@ -138,14 +138,16 @@ function showTitleStations(
     stationNameAfterNavigationDown === ''
   )
     return (
-      <View style={{ flex: 0.2, backgroundColor: '#3d86cb' }}>
+      <Container>
         <StationContainer>
-          <StationTitle>
-            {'\n'}
-            {stationNameAfterNavigationUp || stationNameAfterNavigationDown}
-          </StationTitle>
+          <StationContainer>
+            <StationTitle>
+              {'\n'}
+              {stationNameAfterNavigationUp || stationNameAfterNavigationDown}
+            </StationTitle>
+          </StationContainer>
         </StationContainer>
-      </View>
+      </Container>
     );
 
   return (
@@ -359,11 +361,12 @@ function StationTimetable({ navigation, route }) {
     ) {
       return (
         <ScrollView>
-          <StationContainer>
+          <TimeTableContainer>
             <TimeTableText>
+              {'\n'}
               {stationNameChooseEndRaimbekAndWorkingDayOrWeekend(stationName)}
             </TimeTableText>
-          </StationContainer>
+          </TimeTableContainer>
         </ScrollView>
       );
     }
