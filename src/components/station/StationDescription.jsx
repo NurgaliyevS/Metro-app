@@ -30,7 +30,7 @@ const StationDescriptionImage = styled.Image`
 `;
 
 const StationDescriptionImageContainer = styled.View`
-  padding: 20px;
+  padding: 10px;
 `;
 
 function stationDescriptionRaimbek() {
@@ -500,7 +500,6 @@ function stationDescriptionSaryarka() {
           фоне молодой столицы Нурсултан, расположенной в сердце бескрайних
           степей Сарыарки. Панно напоминают о богатом культурно-историческом
           наследии казахского народа.{'\n'}
-          {'\n'}
         </StationDescriptionText>
       </StationContainerDescription>
       <StationDescriptionImageContainer
@@ -540,7 +539,6 @@ function stationDescriptionMomushuly() {
           керамические панели Kalesinterflex, серого цвета и "под светлое
           дерево", освещение светодиодными светильниками нейтрального белого
           цвета.{'\n'}
-          {'\n'}
         </StationDescriptionText>
       </StationContainerDescription>
       <StationDescriptionImageContainer
