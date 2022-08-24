@@ -1,11 +1,11 @@
 import react from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import StationDescriptionScreen from '../screen/StationDescriptionScreen';
 import CartScreen from '../screen/HistoryScreen';
-import StationNavigator from './StationNavigator';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import StationTimeTableNavigation from './StationTimeTableNavigation';
+import StationDescriptionNavigation from './StationDescriptionNavigator';
 
 const Bottom = createBottomTabNavigator();
 
@@ -22,8 +22,8 @@ function BottomNavigator() {
         }}
       >
         <Bottom.Screen
-          name='StationNavigator'
-          component={StationNavigator}
+          name='StationTimeTableNavigation'
+          component={StationTimeTableNavigation}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name='alarm-outline' color={color} size={size} />
@@ -31,8 +31,8 @@ function BottomNavigator() {
           }}
         />
         <Bottom.Screen
-          name='StationDescription'
-          component={StationDescriptionScreen}
+          name='StationDescriptionNavigation'
+          component={StationDescriptionNavigation}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name='subway-outline' color={color} size={size} />
