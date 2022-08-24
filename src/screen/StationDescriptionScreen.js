@@ -10,19 +10,6 @@ import StationDescription from '../components/station/StationDescription';
 
 const StationDescriptionView = styled.View`
   flex: 1;
-  padding: 10px;
-`;
-
-const StationDescriptionContainerTitle = styled.View`
-  align-items: center;
-`;
-
-const StationDescriptionTitle = styled.Text`
-  padding-top: 20px;
-  font-size: 17px;
-  text-align: 'center';
-  font-weigth: bold;
-  padding-bottom: 30px;
 `;
 
 function StationDescriptionScreen({ navigation }) {
@@ -88,10 +75,6 @@ function StationDescriptionScreen({ navigation }) {
 
   return (
     <StationDescriptionView>
-      <StationDescriptionContainerTitle>
-        <StationDescriptionTitle>Описание станций</StationDescriptionTitle>
-      </StationDescriptionContainerTitle>
-
       <StationList
         navigateToStationDescription={navigateToStationDescription}
       />
